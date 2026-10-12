@@ -1,10 +1,21 @@
-# خلاصه‌ساز یوتیوب (YT Summarizer)
+# خلاصه‌ساز یوتیوب (YT Summarizer) 🎬✨
 
-اپ اندروید که لینک ویدیوی یوتیوب رو می‌گیره، متن ویدیو رو درمیاره و با هوش مصنوعی (Gemini) خلاصه می‌کنه.
-مستقل از هر سایت دیگه‌ای کار می‌کنه؛ نه حساب کاربری لازم داره نه اشتراک.
+> **YouTube video summarizer for Android** — paste or share a YouTube link and get the full transcript plus a clean AI summary, powered by Google Gemini (free tier).
+
+## درباره پروژه (About)
+یک اپ اندرویدی که لینک ویدیوی یوتیوب رو می‌گیره، متن کامل ویدیو رو درمیاره و با هوش مصنوعی Gemini خلاصه می‌کنه:
+چکیده، نکات کلیدی، تایم‌لاین با زمان و نتیجه‌گیری — به فارسی یا انگلیسی.
+
+- 🔗 لینک رو بچسبون یا مستقیم از اپ یوتیوب **Share** کن
+- 📝 متن کامل ویدیو (از زیرنویس، یا اگه زیرنویس نداشت، با تحلیل خود ویدیو)
+- 🤖 خلاصه هوشمند با Gemini — با کلید رایگان خودت، بدون حساب کاربری یا اشتراک
+- 🕘 تاریخچه، کپی و اشتراک‌گذاری
+- 🌙 رابط فارسی (راست‌به‌چپ) با تم تیره و روشن
+
+ساخته‌شده با Kotlin و Jetpack Compose.
 
 ## دانلود
-فایل نصبی آماده: [`apk/YT-Summarizer.apk`](apk/YT-Summarizer.apk)
+**[⬇️ دانلود مستقیم APK](https://github.com/HELBOYCODER/yt-summarizer-android/raw/main/apk/YT-Summarizer.apk)** — فایل [`apk/YT-Summarizer.apk`](apk/YT-Summarizer.apk)
 (هر push هم از طریق GitHub Actions یک APK تازه می‌سازه — تب **Actions** → آخرین اجرا → `yt-summarizer-apk`.)
 
 ## راه‌اندازی (یک بار)
