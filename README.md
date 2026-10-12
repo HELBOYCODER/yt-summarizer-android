@@ -1,33 +1,45 @@
-# SenPai Scanner 🔍
+# خلاصه‌ساز یوتیوب (YT Summarizer) 🎬✨
 
-اپلیکیشن اندرویدی SenPai Scanner — همراه با سرویس VPN داخلی (`AyasaVpnService`).
+> **YouTube video summarizer for Android** — paste or share a YouTube link and get the full transcript plus a clean AI summary, powered by Google Gemini (free tier).
 
-## ✨ امکانات
+## درباره پروژه (About)
+یک اپ اندرویدی که لینک ویدیوی یوتیوب رو می‌گیره، متن کامل ویدیو رو درمیاره و با هوش مصنوعی Gemini خلاصه می‌کنه:
+چکیده، نکات کلیدی، تایم‌لاین با زمان و نتیجه‌گیری — به فارسی یا انگلیسی.
 
-- رابط کاربری Jetpack Compose
-- سرویس VPN سیستمی از طریق `VpnService` اندروید
-- APK آماده نصب — بدون نیاز به بیلد گرفتن
+- 🔗 لینک رو بچسبون یا مستقیم از اپ یوتیوب **Share** کن
+- 📝 متن کامل ویدیو (از زیرنویس، یا اگه زیرنویس نداشت، با تحلیل خود ویدیو)
+- 🤖 خلاصه هوشمند با Gemini — با کلید رایگان خودت، بدون حساب کاربری یا اشتراک
+- 🕘 تاریخچه، کپی و اشتراک‌گذاری
+- 🌙 رابط فارسی (راست‌به‌چپ) با تم تیره و روشن
 
-## 📦 دانلود مستقیم APK
+ساخته‌شده با Kotlin و Jetpack Compose.
 
-فایل `app-debug.apk` مستقیماً از این مخزن قابل دانلود است:
+## دانلود
+**[⬇️ دانلود مستقیم APK](https://github.com/HELBOYCODER/yt-summarizer-android/raw/main/apk/YT-Summarizer.apk)** — فایل [`apk/YT-Summarizer.apk`](apk/YT-Summarizer.apk)
+(هر push هم از طریق GitHub Actions یک APK تازه می‌سازه — تب **Actions** → آخرین اجرا → `yt-summarizer-apk`.)
 
-**[⬇️ دانلود app-debug.apk](https://github.com/3krbkbkrbrbg/scanner-senpai-android-apk/raw/main/.build-outputs/app-debug.apk)**
+## راه‌اندازی (یک بار)
+1. از <https://aistudio.google.com/apikey> یک کلید **رایگان** Gemini بگیر.
+2. اپ رو باز کن، در **تنظیمات** کلید رو بچسبون و ذخیره کن.
 
-### مراحل نصب
+## استفاده
+- لینک رو بچسبون و «خلاصه کن» رو بزن، **یا**
+- داخل اپ یوتیوب روی **Share** بزن و «خلاصه‌ساز یوتیوب» رو انتخاب کن.
 
-1. APK را دانلود کن.
-2. گزینه «نصب از منابع ناشناس» را برای فایل‌منیجر یا مرورگرت فعال کن.
-3. فایل را باز کن و Install را بزن.
-4. هنگام اجرای سرویس VPN، دسترسی سیستم را تأیید کن.
+خروجی دو تب داره: **خلاصه** (چکیده، نکات کلیدی، تایم‌لاین با زمان، نتیجه‌گیری) و **متن کامل**. کپی، اشتراک و تاریخچه هم داره.
 
-## 🛠 بیلد از سورس
+## چطور کار می‌کنه
+1. عنوان ویدیو از oEmbed یوتیوب گرفته میشه.
+2. زیرنویس (دستی یا خودکار) مستقیم از یوتیوب دانلود میشه.
+3. اگه ویدیو **زیرنویس نداشته باشه**، لینک ویدیو به Gemini داده میشه و خودش ویدیو رو می‌بینه و هم متن کامل و هم خلاصه رو می‌سازه.
+4. متن به Gemini فرستاده میشه و خلاصه به زبان انتخابی (فارسی / انگلیسی / زبان ویدیو) برمی‌گرده.
 
-پیش‌نیاز: [Android Studio](https://developer.android.com/studio)
+سهمیه رایگان Gemini روزانه است و برای استفاده شخصی معمولاً کافیه؛ اگه پیام «سهمیه تمام شده» دیدی چند دقیقه بعد دوباره امتحان کن.
 
-1. پروژه را در Android Studio باز کن.
-2. اجازه بده ناسازگاری‌های import خودکار اصلاح شود.
-3. در صورت نیاز یک فایل `.env` در ریشه پروژه بساز و `GEMINI_API_KEY` را داخلش قرار بده.
-4. **Run** ▶️ — یا برای خروجی APK از منوی Build ← Build Bundle(s)/APK(s) استفاده کن.
-
-این پروژه از [AI Studio](https://ai.studio/apps/6f14678a-3e2a-4a71-9bd5-efdc2ac783a6) هم قابل دسترسی است.
+## ساخت از سورس
+```bash
+echo "sdk.dir=/path/to/android-sdk" > local.properties
+# اختیاری: کلید پیش‌فرض داخل اپ
+echo "GEMINI_API_KEY=..." >> local.properties
+./gradlew assembleRelease
+```
